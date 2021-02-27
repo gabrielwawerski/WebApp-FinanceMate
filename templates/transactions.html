@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="static/style.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h2>{{ title }}:</h2>
+    <div class="container-fluid">
+        <div class="row align-items-start">
+            {% for t in transactions %}
+            {% if t.id % 3 == 0 %}
+        </div>
+        <div class="row align-items-start">
+            {% endif %}
+            <div class="col">
+                <div><b>{{ t.id }}</b> {{ t.sign }}{{ t.amount }}{{ currency }}</div>
+                    <div>{{ t.name }}</div>
+                    <div>{{ t.description }}</div>
+                <div>Balance after: {{ t.balance_after }}{{ currency }}</div>
+                <div>Platform: {{ t.platform }}</div>
+                <div>OS: {{ t.os }}</div>
+                <div>Time: {{ t.timestamp }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+</html>
